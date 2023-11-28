@@ -34,21 +34,22 @@ public class Program {
 				
 				System.out.println();
 				System.out.print("Target: ");
-				ChessPosition taget = UI.readChessPosition(sc);
+				ChessPosition target = UI.readChessPosition(sc);
 				
-				ChessPiece capturePiece = chessMatch.performChessMove(source, taget);
+				ChessPiece capturePiece = chessMatch.performChessMove(source, target);
 				if(capturePiece != null) {
 					captured.add(capturePiece);
 				}
 				
-			} catch(ChessException e) {
+				
+			} 
+			catch(ChessException e) { 
 				System.out.println(e.getMessage());
-				sc.nextLine();
-			} catch(InputMismatchException e) {
-				System.out.println(e.getMessage());
-				sc.nextLine();
-			}
-			
+				sc.nextLine(); 
+			} 
+			catch(InputMismatchException e) {
+				 System.out.println(e.getMessage()); sc.nextLine(); 
+			 }
 		}
 		
 		UI.clearScreen();
